@@ -1,0 +1,20 @@
+JMP START
+X: DB "03/06" 
+DB 0	
+START:
+MOV C, X  
+MOV D, 232	
+CALL Y
+HLT             
+Y:			
+PUSH A
+PUSH B
+MOV B, 0
+OUT:
+MOV A, [C]	
+MOV [D], A	
+INC C
+INC D  
+CMP B, [C]	
+JNZ OUT	
+HLT
