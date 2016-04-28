@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-int main(void)
+int main()
 {
-int sum,day,month,year;
+int dday,day,month,year;
 printf("Enter the number of days \n");
-scanf("%d", &sum);
-years=sum/365;
-month=(sum-365*year)/30.42;
-days=sum-365*year-30.42*month;
-printf("%d days= %d years, %d months, %d day\n",sum,day,month,year);
+scanf("%d", &dday);
+year=dday/ 365;
+day=dday-365*year-30*month;
+month=(dday-365*year)/ 30;
+printf("%d day= %d years, %d months, %d day\n",dday,day,month,year);
 return 0;
 }
