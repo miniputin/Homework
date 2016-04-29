@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+float V,ang,t,sin;
+printf("Введите скорость\n");
+scanf("%f",&V);
+printf("Введите угол\n");
+scanf("%f", &ang);
+ang=(ang*3.14159265359)/180;
+sin=ang-ang*ang*ang/6+ang*ang*ang*ang*ang/120-ang*ang*ang*ang*ang*ang*ang/5040;
+t=(2*V*sin)/9.8;
+printf("Время полета составит %.4f секунд.\n", t);
+return 0;
+}
