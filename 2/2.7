@@ -1,0 +1,106 @@
+jmp start
+start:
+mov a,4
+cmp a,4
+jnbe ER
+push a
+call opp
+pop a
+call z
+call x
+call f
+ER:         
+call error
+str: db "error"
+db 0
+error:
+mov c,str
+mov d,232
+mov b,0
+er: 
+mov a,[c]
+mov [d],a
+inc c
+inc d
+cmp b,[c]
+jne er 
+f:                      
+HLT
+opp:                    
+mov d,236
+add a,48
+mov [232],a
+cmp a,48
+jnz jj
+add a,1
+jj:
+mov [233],33
+mov [234],61
+mov [235],a
+circle:
+cmp a,49
+jz liy
+sub a,1
+mov [d],42
+inc d
+mov [d],a
+inc d
+jmp circle
+liy:
+mov [d],61
+RET
+z:                        
+cmp a,0
+jnz pick
+add a,1
+pick:
+cmp a,1
+jz ed
+push a
+sub a,1
+mov B,a
+pop a
+definition:
+mul b
+sub b,1
+CMP b,0
+jnz definition
+ed:
+push a
+pop a
+RET
+x:                      
+inc b
+push a
+div 100
+cmp a,0
+jz qwerty
+add a,48
+mov [b],a        
+inc b
+sub a,48
+mov c,5
+qwerty:        
+mul 10
+mov b,a
+pop a
+sub a,b
+push a
+div 10
+cmp c,5
+jz asdfg
+cmp a,0
+jz goal
+asdfg:
+add a,48
+mov [d],a         
+inc d
+sub a,48
+goal: 
+mul 10
+mov b,a
+pop a
+sub a,b
+add a,48
+mov [d],a
+ret
