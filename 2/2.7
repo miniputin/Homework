@@ -25,7 +25,7 @@ inc d
 cmp b,[c]
 jne er 
 f:                      
-HLT
+hlt
 opp:                    
 mov d,236
 add a,48
@@ -48,7 +48,7 @@ inc d
 jmp circle
 liy:
 mov [d],61
-RET
+ret
 z:                        
 cmp a,0
 jnz pick
@@ -68,7 +68,7 @@ jnz definition
 ed:
 push a
 pop a
-RET
+ret
 x:                      
 inc b
 push a
