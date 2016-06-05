@@ -1,0 +1,23 @@
+mov a,4  
+call factoriall
+hlt
+factoriall:
+cmp a,0
+jne n1
+add a,1
+n1:
+cmp a,1
+je n3
+push a
+sub a,1
+mov b,a
+pop a
+n2:
+mul b
+sub b,1
+CMP b,0
+jne n2
+n3:
+push a
+pop a
+ret
