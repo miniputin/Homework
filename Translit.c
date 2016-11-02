@@ -263,7 +263,7 @@ case 'z': printf("З");
 break; 
  
 default: 
-printf("%c",c);//это не трогать 
+printf("%c",c);
 } 
 } 
 fclose(file); 
